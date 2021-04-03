@@ -1,41 +1,41 @@
-createTicket.c(6): No pass : 8
-createTicket.c(6): No pass : 1
-createTicket.c(6): No pass : 9
-createTicket.c(6): No pass : 5
-createTicket.c(6): No pass : 2
-createTicket.c(6): No pass : 3
-createTicket.c(6): No pass : 8
-createTicket.c(6): No pass : 10
-createTicket.c(6): No pass : 3
-createTicket.c(6): No pass : 6
-Action2.c(41): WORD A DETECTED A
-Action2.c(53): count passenger+++ 8
-Action2.c(54): price+++ 5256
-Action2.c(53): count passenger+++ 1
-Action2.c(54): price+++ 657
-Action2.c(53): count passenger+++ 9
-Action2.c(54): price+++ 5913
-Action2.c(53): count passenger+++ 5
-Action2.c(54): price+++ 3285
-Action2.c(53): count passenger+++ 2
-Action2.c(54): price+++ 1314
-Action2.c(53): count passenger+++ 3
-Action2.c(54): price+++ 1971
-Action2.c(53): count passenger+++ 8
-Action2.c(54): price+++ 5256
-Action2.c(53): count passenger+++ 10
-Action2.c(54): price+++ 6570
-Action2.c(53): count passenger+++ 3
-Action2.c(54): price+++ 1971
-Action2.c(53): count passenger+++ 6
-Action2.c(54): price+++ 3942
-Action2.c(77): No passager:1 - Ticket Price - $ 657
-Action2.c(77): No passager:2 - Ticket Price - $ 1314
-Action2.c(77): No passager:3 - Ticket Price - $ 1971
-Action2.c(77): No passager:3 - Ticket Price - $ 1971
-Action2.c(77): No passager:5 - Ticket Price - $ 3285
-Action2.c(77): No passager:6 - Ticket Price - $ 3942
-Action2.c(77): No passager:8 - Ticket Price - $ 5256
-Action2.c(77): No passager:8 - Ticket Price - $ 5256
-Action2.c(77): No passager:9 - Ticket Price - $ 5913
-Action2.c(77): No passager:10 - Ticket Price - $ 6570
+createTicket.h(6): No pass : 2
+createTicket.h(6): No pass : 2
+createTicket.h(6): No pass : 4
+createTicket.h(6): No pass : 2
+createTicket.h(6): No pass : 4
+createTicket.h(6): No pass : 1
+createTicket.h(6): No pass : 8
+createTicket.h(6): No pass : 2
+createTicket.h(6): No pass : 3
+createTicket.h(6): No pass : 9
+Action2.c(48): WORD A DETECTED A
+Action2.c(60): count passenger+++ 2
+Action2.c(61): price+++ 1016
+Action2.c(60): count passenger+++ 2
+Action2.c(61): price+++ 1016
+Action2.c(60): count passenger+++ 4
+Action2.c(61): price+++ 2032
+Action2.c(60): count passenger+++ 2
+Action2.c(61): price+++ 1016
+Action2.c(60): count passenger+++ 4
+Action2.c(61): price+++ 2032
+Action2.c(60): count passenger+++ 1
+Action2.c(61): price+++ 508
+Action2.c(60): count passenger+++ 8
+Action2.c(61): price+++ 4064
+Action2.c(60): count passenger+++ 2
+Action2.c(61): price+++ 1016
+Action2.c(60): count passenger+++ 3
+Action2.c(61): price+++ 1524
+Action2.c(60): count passenger+++ 9
+Action2.c(61): price+++ 4572
+Action2.c(84): No passager:1 - Ticket Price - $ 508
+Action2.c(84): No passager:2 - Ticket Price - $ 1016
+Action2.c(84): No passager:2 - Ticket Price - $ 1016
+Action2.c(84): No passager:2 - Ticket Price - $ 1016
+Action2.c(84): No passager:2 - Ticket Price - $ 1016
+Action2.c(84): No passager:3 - Ticket Price - $ 1524
+Action2.c(84): No passager:4 - Ticket Price - $ 2032
+Action2.c(84): No passager:4 - Ticket Price - $ 2032
+Action2.c(84): No passager:8 - Ticket Price - $ 4064
+Action2.c(84): No passager:9 - Ticket Price - $ 4572

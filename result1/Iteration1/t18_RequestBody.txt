@@ -1,4 +1,4 @@
 "firstName=Dima&lastName=Popov&address1=Butlerova+5&address2=Paris&pass1=Anton+Ivanov&creditCar"
-"d=&expDate=&oldCCOption=&numPassengers=5&seatType=First&seatPref=Aisle&outboundFlight=400%3B65"
-"7%3B04%2F01%2F2021&advanceDiscount=0&returnFlight=&JSFormSubmit=off&.cgifields=saveCC&buyFligh"
-"ts.x=58&buyFlights.y=7"
+"d=&expDate=&oldCCOption=&numPassengers=2&seatType=Business&seatPref=Aisle&outboundFlight=400%3"
+"B508%3B04%2F03%2F2021&advanceDiscount=0&returnFlight=&JSFormSubmit=off&.cgifields=saveCC&buyFl"
+"ights.x=58&buyFlights.y=7"

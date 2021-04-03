@@ -1,4 +1,4 @@
-# 1 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c"
+# 1 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c"
 # 1 "C:\\Program Files (x86)\\Micro Focus\\LoadRunner\\include/lrun.h" 1
  
  
@@ -964,7 +964,7 @@ int lr_db_getvalue(char * pFirstArg, ...);
 
 
 
-# 1 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 1 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 
 # 1 "C:\\Program Files (x86)\\Micro Focus\\LoadRunner\\include/SharedParameter.h" 1
 
@@ -1130,7 +1130,7 @@ extern VTCERR2  lrvtc_noop();
 
 
 
-# 2 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 2 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 
 # 1 "globals.h" 1
 
@@ -2582,58 +2582,7 @@ void
 
 # 8 "globals.h" 2
 
-
- 
- 
-
-
-# 3 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
-
-# 1 "vuser_init.c" 1
-vuser_init()
-{
-	web_reg_save_param_ex(
-    "ParamName=userSession", 
-    "LB/IC=name=\"userSession\" value=\"",
-    "RB/IC=\"",
-    "Ordinal=1",
-	"LAST");
-	
-	web_url("webtours", 
-		"URL={Host}/webtours/", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=text/html", 
-		"Referer=", 
-		"Snapshot=t1.inf", 
-		"Mode=HTML", 
-		"LAST");
-
-	web_set_sockets_option("SSL_VERSION", "TLS1.2");
-
-
-
-	web_submit_data("login.pl",
-		"Action={Host}/cgi-bin/login.pl",
-		"Method=POST",
-		"TargetFrame=body",
-		"RecContentType=text/html",
-		"Referer={Host}/cgi-bin/nav.pl?in=home",
-		"Snapshot=t2.inf",
-		"Mode=HTML",
-		"ITEMDATA",
-		"Name=userSession", "Value={userSession}", "ENDITEM",
-		"Name=username", "Value=jojo", "ENDITEM",
-		"Name=password", "Value=bean", "ENDITEM",
-		"Name=JSFormSubmit", "Value=off", "ENDITEM",
-		"Name=login.x", "Value=49", "ENDITEM",
-		"Name=login.y", "Value=7", "ENDITEM",
-		"LAST");
-	return 0;
-}
-# 4 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
-
-# 1 "createTicket.c" 1
+# 1 "createTicket.h" 1
 createTicket(int passCount)
 {
 int numPass;
@@ -2737,7 +2686,164 @@ web_reg_save_param_ex(
 		
 	return 0;
 }
-# 5 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 9 "globals.h" 2
+
+
+ 
+ 
+
+
+# 3 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
+
+# 1 "vuser_init.c" 1
+vuser_init()
+{
+	web_reg_save_param_ex(
+    "ParamName=userSession", 
+    "LB/IC=name=\"userSession\" value=\"",
+    "RB/IC=\"",
+    "Ordinal=1",
+	"LAST");
+	
+	web_url("webtours", 
+		"URL={Host}/webtours/", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer=", 
+		"Snapshot=t1.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+	web_set_sockets_option("SSL_VERSION", "TLS1.2");
+
+
+
+	web_submit_data("login.pl",
+		"Action={Host}/cgi-bin/login.pl",
+		"Method=POST",
+		"TargetFrame=body",
+		"RecContentType=text/html",
+		"Referer={Host}/cgi-bin/nav.pl?in=home",
+		"Snapshot=t2.inf",
+		"Mode=HTML",
+		"ITEMDATA",
+		"Name=userSession", "Value={userSession}", "ENDITEM",
+		"Name=username", "Value=jojo", "ENDITEM",
+		"Name=password", "Value=bean", "ENDITEM",
+		"Name=JSFormSubmit", "Value=off", "ENDITEM",
+		"Name=login.x", "Value=49", "ENDITEM",
+		"Name=login.y", "Value=7", "ENDITEM",
+		"LAST");
+	return 0;
+}
+# 4 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
+
+# 1 "createTicket333.c" 1
+createTicket333(int passCount)
+{
+int numPass;
+
+numPass = rand() % passCount +1;
+	lr_output_message("No pass : %d", numPass);
+	lr_save_int(numPass,"numPass");
+
+	web_url("Search Flights Button", 
+		"URL={Host}/cgi-bin/welcome.pl?page=search", 
+		"TargetFrame=body", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer={Host}/cgi-bin/nav.pl?page=menu&in=home", 
+		"Snapshot=t3.inf", 
+		"Mode=HTML", 
+		"LAST");
+
+web_reg_save_param_ex(
+    "ParamName=OFlight", 
+    "LB/IC=name=\"outboundFlight\" value=\"",
+    "RB/IC=\"",
+    "Ordinal=1",
+	"LAST");
+
+	web_submit_data("reservations.pl", 
+		"Action={Host}/cgi-bin/reservations.pl", 
+		"Method=POST", 
+		"TargetFrame=", 
+		"RecContentType=text/html", 
+		"Referer={Host}/cgi-bin/reservations.pl?page=welcome", 
+		"Snapshot=t4.inf", 
+		"Mode=HTML", 
+		"ITEMDATA", 
+		"Name=advanceDiscount", "Value=0", "ENDITEM", 
+		"Name=depart", "Value={City}", "ENDITEM", 
+		"Name=departDate", "Value={DateDepart}", "ENDITEM", 
+		"Name=arrive", "Value={City2}", "ENDITEM", 
+		"Name=returnDate", "Value={DateArrive}", "ENDITEM", 
+		"Name=numPassengers", "Value={numPass}", "ENDITEM", 
+		"Name=seatPref", "Value={SeatPref}", "ENDITEM", 
+		"Name=seatType", "Value={SeatType}", "ENDITEM", 
+		"Name=.cgifields", "Value=roundtrip", "ENDITEM", 
+		"Name=.cgifields", "Value=seatType", "ENDITEM", 
+		"Name=.cgifields", "Value=seatPref", "ENDITEM", 
+		"Name=findFlights.x", "Value=37", "ENDITEM", 
+		"Name=findFlights.y", "Value=10", "ENDITEM", 
+		"LAST");
+
+
+
+	web_submit_data("reservations.pl_2", 
+		"Action={Host}/cgi-bin/reservations.pl", 
+		"Method=POST", 
+		"TargetFrame=", 
+		"RecContentType=text/html", 
+		"Referer={Host}/cgi-bin/reservations.pl", 
+		"Snapshot=t5.inf", 
+		"Mode=HTML", 
+		"ITEMDATA", 
+		"Name=outboundFlight", "Value={OFlight}", "ENDITEM", 
+		"Name=numPassengers", "Value={passCount}", "ENDITEM", 
+		"Name=advanceDiscount", "Value=0", "ENDITEM", 
+		"Name=seatType", "Value={SeatType}", "ENDITEM", 
+		"Name=seatPref", "Value={SeatPref}", "ENDITEM", 
+		"Name=reserveFlights.x", "Value=51", "ENDITEM", 
+		"Name=reserveFlights.y", "Value=6", "ENDITEM", 
+		"LAST");
+
+
+
+	web_submit_data("reservations.pl_3", 
+		"Action={Host}/cgi-bin/reservations.pl", 
+		"Method=POST", 
+		"TargetFrame=", 
+		"RecContentType=text/html", 
+		"Referer={Host}/cgi-bin/reservations.pl", 
+		"Snapshot=t6.inf", 
+		"Mode=HTML", 
+		"ITEMDATA", 
+		"Name=firstName", "Value={FirstName}", "ENDITEM", 
+		"Name=lastName", "Value={LastName}", "ENDITEM", 
+		"Name=address1", "Value={Address}", "ENDITEM", 
+		"Name=address2", "Value={City}", "ENDITEM", 
+		"Name=pass1", "Value={FirstName} {LastName}", "ENDITEM", 
+		"Name=creditCard", "Value=", "ENDITEM", 
+		"Name=expDate", "Value=", "ENDITEM", 
+		"Name=oldCCOption", "Value=", "ENDITEM", 
+		"Name=numPassengers", "Value={numPass}", "ENDITEM", 
+		"Name=seatType", "Value={SeatType}", "ENDITEM", 
+		"Name=seatPref", "Value={SeatPref}", "ENDITEM", 
+		"Name=outboundFlight", "Value={OFlight}", "ENDITEM", 
+		"Name=advanceDiscount", "Value=0", "ENDITEM", 
+		"Name=returnFlight", "Value=", "ENDITEM", 
+		"Name=JSFormSubmit", "Value=off", "ENDITEM", 
+		"Name=.cgifields", "Value=saveCC", "ENDITEM", 
+		"Name=buyFlights.x", "Value=58", "ENDITEM", 
+		"Name=buyFlights.y", "Value=7", "ENDITEM", 
+		"LAST");
+
+		
+	return 0;
+}
+# 5 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 
 # 1 "Action.c" 1
 Action()
@@ -2746,15 +2852,15 @@ Action()
 	createTicket(10);
 	return 0;
 }
-# 6 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 6 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 
 # 1 "Action2.c" 1
 Action2()
 {
-	int sort[10];
-	int sortPrice[10];
+	int sort[100];
+	int sortPrice[100];
 	int i,j;
-	char sortHandler[50];
+	char sortHandler[500];
 	char sortPriceHandler[10000];
 	
 	char* word="A";
@@ -2764,6 +2870,13 @@ Action2()
     "ParamName=noPass", 
     "LB/IC=<b>&nbsp;&nbsp;",
     "RB/IC= ",
+    "Ordinal=all",
+	"LAST");
+	
+	web_reg_save_param_ex(
+    "ParamName=totalTicket", 
+    "LB/IC=A total of ",
+    "RB/IC= scheduled",
     "Ordinal=all",
 	"LAST");
 	
@@ -2785,7 +2898,7 @@ Action2()
 		"LAST");
 	
 	 
-		for (i=0;i<atoi(lr_eval_string("{noPass_count}"));i++) {
+		for (i=0;i<atoi(lr_eval_string("{totalTicket_1}"));i++) {
 		sprintf(sortHandler, "{noPass_%d}", i+1);
 		sprintf(sortPriceHandler, "{priceFirstTicket_%d}", i+1);
 		if (strcmp(lr_eval_string(sortHandler), word) == 0) {
@@ -2807,9 +2920,9 @@ Action2()
 	
 
      
-   for(i = 0 ; i < atoi(lr_eval_string("{noPass_count}"))-1; i++) { 
+   for(i = 0 ; i < atoi(lr_eval_string("{totalTicket_1}"))-1; i++) { 
      
-       for(j = 0 ; j < atoi(lr_eval_string("{noPass_count}")) - i - 1 ; j++) {  
+       for(j = 0 ; j < atoi(lr_eval_string("{totalTicket_1}")) - i - 1 ; j++) {  
            if(sort[j] > sort[j+1]) {           
            
               int tmp = sort[j];
@@ -2824,7 +2937,7 @@ Action2()
     }
     
      
-       for(i = 0 ; i < atoi(lr_eval_string("{noPass_count}")); i++) { 
+       for(i = 0 ; i < atoi(lr_eval_string("{totalTicket_1}")); i++) { 
     	lr_output_message("No passager:%d - Ticket Price - $ %d",sort[i],sortPrice[i]);
     }
 	
@@ -2841,12 +2954,12 @@ Action2()
 	
 	return 0;
 }
-# 7 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 7 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 
 # 1 "vuser_end.c" 1
 vuser_end()
 {
 	return 0;
 }
-# 8 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\library\\\\combined_Task2.c" 2
+# 8 "c:\\users\\79278\\desktop\\andrei\\scripts\\task5.5\\task5.5\\\\combined_Task2.c" 2
 

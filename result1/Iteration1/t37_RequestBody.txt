@@ -1,2 +1,2 @@
-"outboundFlight=400%3B657%3B04%2F01%2F2021&numPassengers=%7BpassCount%7D&advanceDiscount=0&seat"
-"Type=First&seatPref=Aisle&reserveFlights.x=51&reserveFlights.y=6"
+"outboundFlight=400%3B508%3B04%2F03%2F2021&numPassengers=%7BpassCount%7D&advanceDiscount=0&seat"
+"Type=Business&seatPref=Aisle&reserveFlights.x=51&reserveFlights.y=6"

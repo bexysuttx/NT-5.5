@@ -1,9 +1,9 @@
 Action2()
 {
-	int sort[10];
-	int sortPrice[10];
+	int sort[100];
+	int sortPrice[100];
 	int i,j;
-	char sortHandler[50];
+	char sortHandler[500];
 	char sortPriceHandler[10000];
 	
 	char* word="A";
@@ -13,6 +13,13 @@ Action2()
     "ParamName=noPass", 
     "LB/IC=<b>&nbsp;&nbsp;",
     "RB/IC= ",
+    "Ordinal=all",
+	LAST);
+	
+	web_reg_save_param_ex(
+    "ParamName=totalTicket", 
+    "LB/IC=A total of ",
+    "RB/IC= scheduled",
     "Ordinal=all",
 	LAST);
 	
@@ -34,7 +41,7 @@ Action2()
 		LAST);
 	
 	//Инициализация массивов для дальнейшей обработки(Массивов чисел и номера билета)
-		for (i=0;i<atoi(lr_eval_string("{noPass_count}"));i++) {
+		for (i=0;i<atoi(lr_eval_string("{totalTicket_1}"));i++) {
 		sprintf(sortHandler, "{noPass_%d}", i+1);
 		sprintf(sortPriceHandler, "{priceFirstTicket_%d}", i+1);
 		if (strcmp(lr_eval_string(sortHandler), word) == 0) {
@@ -56,9 +63,9 @@ Action2()
 	
 
     //сортировка
-   for(i = 0 ; i < atoi(lr_eval_string("{noPass_count}"))-1; i++) { 
+   for(i = 0 ; i < atoi(lr_eval_string("{totalTicket_1}"))-1; i++) { 
      
-       for(j = 0 ; j < atoi(lr_eval_string("{noPass_count}")) - i - 1 ; j++) {  
+       for(j = 0 ; j < atoi(lr_eval_string("{totalTicket_1}")) - i - 1 ; j++) {  
            if(sort[j] > sort[j+1]) {           
            
               int tmp = sort[j];
@@ -73,7 +80,7 @@ Action2()
     }
     
     //Вывод в консоль массивов
-       for(i = 0 ; i < atoi(lr_eval_string("{noPass_count}")); i++) { 
+       for(i = 0 ; i < atoi(lr_eval_string("{totalTicket_1}")); i++) { 
     	lr_output_message("No passager:%d - Ticket Price - $ %d",sort[i],sortPrice[i]);
     }
 	

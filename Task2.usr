@@ -24,7 +24,6 @@ Description=
 ScriptLocale=ru-RU
 [Actions]
 vuser_init=vuser_init.c
-createTicket=createTicket.c
 Action=Action.c
 Action2=Action2.c
 vuser_end=vuser_end.c
@@ -38,25 +37,21 @@ Default Profile=default.cfg
 globals.h=
 [Modified Actions]
 vuser_init=1
-createTicket=1
 Action=1
 Action2=1
 vuser_end=0
 [Recorded Actions]
 vuser_init=0
-createTicket=1
 Action=0
 Action2=0
 vuser_end=0
 [Replayed Actions]
 vuser_init=1
-createTicket=1
 Action=1
 Action2=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
-createTicket=cci
 Action=cci
 Action2=cci
 vuser_end=cci
@@ -67,3 +62,5 @@ LastReplayStatus=1
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1
+[ManuallyExtraFiles]
+createTicket.h=

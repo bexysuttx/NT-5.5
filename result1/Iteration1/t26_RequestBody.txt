@@ -1,4 +1,4 @@
 "firstName=Anton&lastName=Ivanov&address1=Butlerova+5&address2=Paris&pass1=Sevil+Pan&creditCard"
-"=&expDate=&oldCCOption=&numPassengers=3&seatType=First&seatPref=Aisle&outboundFlight=400%3B657"
-"%3B04%2F01%2F2021&advanceDiscount=0&returnFlight=&JSFormSubmit=off&.cgifields=saveCC&buyFlight"
-"s.x=58&buyFlights.y=7"
+"=&expDate=&oldCCOption=&numPassengers=1&seatType=Business&seatPref=Aisle&outboundFlight=400%3B"
+"508%3B04%2F03%2F2021&advanceDiscount=0&returnFlight=&JSFormSubmit=off&.cgifields=saveCC&buyFli"
+"ghts.x=58&buyFlights.y=7"
